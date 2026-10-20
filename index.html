@@ -12,7 +12,7 @@
   "sameAs": [
     "https://www.linkedin.com/in/Kartik-Nemani",
     "https://scholar.google.com/citations?user=vclv4OUAAAAJ&hl=en&oi=ao",
-    "https://github.com/kartiknemani"
+    "https://github.com/kartiknemani",
      "https://wikidata.org/wiki/Q141374617"
   ]
 }
@@ -691,123 +691,9 @@
     function createBlossom() { ... }
     function startFlowering() { ... }
     ===== END DISABLED ===== */
-
-    /* ===== DISABLED - SUMMER VIBES FUNCTIONS (disabled by user request, kept intact for reuse) ===== */
-    if (false) {
+    /* ===== DISABLED - SUMMER VIBES FUNCTIONS (dimmed for seasonal rotation) ===== */
     let isSummer = false;
     let summerInterval;
-
-    // SVG markup for lemon slice (top-down cross-section view)
-    function lemonSVG(size) {
-        return `<svg width="${size}" height="${size}" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-            <!-- Lemon slice outer rind -->
-            <circle cx="30" cy="30" r="28" fill="#f9e44b" stroke="#d4a017" stroke-width="2"/>
-            <!-- White pith ring -->
-            <circle cx="30" cy="30" r="23" fill="#fff9c4" stroke="#e8cc30" stroke-width="0.5"/>
-            <!-- Flesh circle -->
-            <circle cx="30" cy="30" r="20" fill="#f5d020"/>
-            <!-- Segment lines (8 segments) -->
-            <line x1="30" y1="10" x2="30" y2="50" stroke="#e8b800" stroke-width="1.2" opacity="0.8"/>
-            <line x1="10" y1="30" x2="50" y2="30" stroke="#e8b800" stroke-width="1.2" opacity="0.8"/>
-            <line x1="15.9" y1="15.9" x2="44.1" y2="44.1" stroke="#e8b800" stroke-width="1.2" opacity="0.8"/>
-            <line x1="44.1" y1="15.9" x2="15.9" y2="44.1" stroke="#e8b800" stroke-width="1.2" opacity="0.8"/>
-            <!-- Center pip -->
-            <circle cx="30" cy="30" r="3.5" fill="#d4a017" opacity="0.7"/>
-            <!-- Tiny highlight -->
-            <circle cx="22" cy="22" r="3" fill="white" opacity="0.35"/>
-        </svg>`;
-    }
-
-    // SVG markup for watermelon slice (triangular wedge view)
-    function watermelonSVG(size) {
-        const s = size;
-        return `<svg width="${s}" height="${Math.round(s*0.65)}" viewBox="0 0 80 52" xmlns="http://www.w3.org/2000/svg">
-            <!-- Green rind outer arc -->
-            <path d="M4,50 Q40,-8 76,50 Z" fill="#4caf50"/>
-            <!-- White inner rind band -->
-            <path d="M9,50 Q40,-1 71,50 Z" fill="#c8e6c9"/>
-            <!-- Red flesh -->
-            <path d="M13,50 Q40,5 67,50 Z" fill="#e53935"/>
-            <!-- Seeds -->
-            <ellipse cx="30" cy="34" rx="2.5" ry="4" fill="#1a1a1a" transform="rotate(-12,30,34)"/>
-            <ellipse cx="40" cy="28" rx="2.5" ry="4" fill="#1a1a1a" transform="rotate(2,40,28)"/>
-            <ellipse cx="50" cy="34" rx="2.5" ry="4" fill="#1a1a1a" transform="rotate(10,50,34)"/>
-            <ellipse cx="36" cy="40" rx="2" ry="3.5" fill="#1a1a1a" transform="rotate(-5,36,40)"/>
-            <ellipse cx="46" cy="41" rx="2" ry="3.5" fill="#1a1a1a" transform="rotate(8,46,41)"/>
-            <!-- Highlight shine -->
-            <ellipse cx="28" cy="22" rx="5" ry="3" fill="white" opacity="0.2" transform="rotate(-20,28,22)"/>
-        </svg>`;
-    }
-
-    // Wind/breeze particles (tiny curved lines)
-    function breezeSVG() {
-        const len = Math.random() * 18 + 10;
-        const opacity = (Math.random() * 0.3 + 0.15).toFixed(2);
-        const color = Math.random() > 0.5 ? '#a0d8ef' : '#b2dfdb';
-        return `<svg width="${Math.round(len * 2.2)}" height="14" viewBox="0 0 ${Math.round(len * 2.2)} 14" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2,7 Q${Math.round(len*0.6)},${Math.random()>0.5?2:12} ${Math.round(len*1.1)},7 Q${Math.round(len*1.6)},${Math.random()>0.5?12:2} ${Math.round(len*2)},7"
-                  fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" opacity="${opacity}"/>
-        </svg>`;
-    }
-
-    const itemTypes = ['lemon', 'watermelon', 'breeze'];
-
-    function createSummerItem() {
-        const el = document.createElement('div');
-        el.classList.add('summer-item');
-
-        // Weighted random: more breeze, balanced fruit
-        const roll = Math.random();
-        let type;
-        if (roll < 0.30) type = 'lemon';
-        else if (roll < 0.58) type = 'watermelon';
-        else type = 'breeze';
-
-        el.classList.add(type);
-
-        const size = type === 'lemon'
-            ? Math.round(Math.random() * 14 + 20)        // 20-34px
-            : type === 'watermelon'
-            ? Math.round(Math.random() * 18 + 24)        // 24-42px
-            : 1;                                          // breeze uses its own sizing
-
-        if (type === 'lemon') {
-            el.innerHTML = lemonSVG(size);
-        } else if (type === 'watermelon') {
-            el.innerHTML = watermelonSVG(size);
-        } else {
-            el.innerHTML = breezeSVG();
-        }
-
-        // Random horizontal position
-        el.style.left = (Math.random() * 98) + 'vw';
-
-        // Random fall speed: gentle — 6s to 11s
-        const duration = (Math.random() * 5 + 6).toFixed(2);
-        // Alternate between two drift animations for variety
-        const anim = Math.random() > 0.5 ? 'summerFall' : 'summerDrift';
-        const delay = (Math.random() * 1.2).toFixed(2);
-
-        el.style.animation = `${anim} ${duration}s ${delay}s linear forwards`;
-        el.style.opacity = '0';
-
-        document.body.appendChild(el);
-        setTimeout(() => { if (el.parentNode) el.parentNode.removeChild(el); }, (parseFloat(duration) + parseFloat(delay) + 0.5) * 1000);
-    }
-
-    function toggleSummer() {
-        const btn = document.getElementById('toggleSummerBtn');
-        isSummer = !isSummer;
-        if (isSummer) {
-            btn.classList.add('active');
-            btn.innerHTML = '<span>☀️</span> Stop Summer';
-            startSummer();
-        } else {
-            btn.classList.remove('active');
-            btn.innerHTML = '<span>☀️</span> Summer is here';
-            clearInterval(summerInterval);
-        }
-    }
     /* ==========================================================================
        SEASON CONTROLLER
        To switch seasons, simply change ACTIVE_SEASON below:
