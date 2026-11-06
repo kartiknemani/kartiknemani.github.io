@@ -1,0 +1,390 @@
+:root {
+            --color-primary: #2d3748;
+            --color-secondary: #4a5568;
+            --color-accent: #ff6b4a;
+            --color-accent-hover: #ff5a33;
+            --color-bg: #f8f9fa;
+            --color-text: #2d3748;
+            --color-text-light: #718096;
+            --color-border: #e2e8f0;
+
+            --color-bg-image: url('Ti3C2-Etch-122822-13-2.png');
+            --bg-image-opacity: 0.15;
+
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        /* ===== DARK MODE - VARIABLE OVERRIDES ===== */
+        body.dark {
+            --color-primary: #e2e8f0;
+            --color-text: #cbd5e0;
+            --color-text-light: #a0aec0;
+            --color-bg: #1a202c;
+            --color-border: #4a5568;
+        }
+        body.dark nav                { background: rgba(26, 32, 44, 0.97); border-bottom-color: #4a5568; }
+        body.dark .summer-btn        { background-color: #2d3748; color: #e2e8f0; border-color: #4a5568; }
+        body.dark .rain-btn          { background-color: #2d3748; color: #e2e8f0; border-color: #4a5568; }
+        body.dark .dark-mode-btn     { background-color: #2d3748; border-color: #4a5568; }
+        body.dark .news-item,
+        body.dark .award             { background-color: #2d3748; }
+        body.dark footer             { background-color: rgba(26, 32, 44, 0.9); border-top-color: #4a5568; }
+        body.dark .profile-image     { background-color: #2d3748; border-color: #4a5568; }
+        body.dark .highlight         { background-color: #44403c; color: #fef3c7; }
+        /* ===== END DARK MODE ===== */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: var(--color-bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: var(--bg-image-opacity);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ===== DISABLED - WINTER SNOW (re-enable next winter) =====
+        .snow-btn { ... }
+        ===== END DISABLED ===== */
+
+        /* ===== DISABLED - SPRING BLOSSOMS (spring has ended) =====
+        .blossom-btn { ... }
+        .blossom { ... }
+        @keyframes falling { ... }
+        ===== END DISABLED ===== */
+
+        /* ===== DARK MODE TOGGLE BUTTON ===== */
+        .dark-mode-btn {
+            position: fixed;
+            top: 0.8rem;
+            right: 13rem;
+            z-index: 2000;
+            width: 38px;
+            height: 38px;
+            padding: 0;
+            background-color: white;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .dark-mode-btn:hover { transform: scale(1.1); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        /* ===== END DARK MODE TOGGLE BUTTON ===== */
+
+        /* ===== DISABLED - SUMMER VIBES (disabled by user request, kept intact for reuse) ===== */
+        @media not all {
+        .summer-btn {
+            position: fixed;
+            top: 0.8rem;
+            right: 2rem;
+            z-index: 2000;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(255, 210, 50, 0.3);
+        }
+
+        .summer-btn.active {
+            background: linear-gradient(135deg, #f9c933, #ff6b35);
+            color: white;
+            border-color: #f9c933;
+            box-shadow: 0 4px 16px rgba(249, 201, 51, 0.5);
+        }
+
+        /* Summer falling items */
+        .summer-item {
+            position: fixed;
+            top: -60px;
+            pointer-events: none;
+            z-index: 9999;
+            user-select: none;
+            will-change: transform, opacity;
+        }
+
+        /* Lemon SVG item */
+        .summer-item.lemon svg,
+        .summer-item.watermelon svg {
+            display: block;
+        }
+
+        /* Drift left/right breeze effect */
+        @keyframes summerFall {
+            0%   {
+                transform: translateY(-60px) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            8%   { opacity: 1; }
+            30%  {
+                transform: translateY(30vh) translateX(18px) rotate(60deg);
+            }
+            60%  {
+                transform: translateY(65vh) translateX(-12px) rotate(150deg);
+            }
+            88%  { opacity: 1; }
+            100% {
+                transform: translateY(108vh) translateX(10px) rotate(280deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes summerDrift {
+            0%   {
+                transform: translateY(-60px) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10%  { opacity: 0.9; }
+            25%  {
+                transform: translateY(25vh) translateX(-22px) rotate(-40deg);
+            }
+            55%  {
+                transform: translateY(60vh) translateX(16px) rotate(-110deg);
+            }
+            85%  { opacity: 0.9; }
+            100% {
+                transform: translateY(108vh) translateX(-8px) rotate(-240deg);
+                opacity: 0;
+            }
+        }
+        }
+        /* ===== END DISABLED - SUMMER VIBES ===== */
+        /* ===== UNIFIED SEASON BUTTON & CANVAS ===== */
+        .season-btn {
+            position: fixed;
+            top: 0.8rem;
+            right: 2rem;
+            z-index: 2000;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            min-width: 145px;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Active Fall Gradient */
+        .season-btn.fall-active {
+            background: linear-gradient(135deg, #c0392b, #d35400);
+            color: white;
+            border-color: #c0392b;
+            box-shadow: 0 4px 16px rgba(192, 57, 43, 0.5);
+        }
+
+        /* Shared Atmospheric FX Canvas */
+        #fxCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        body.dark .season-btn {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #4a5568;
+        }
+
+        @media (max-width: 768px) {
+            .season-btn { top: auto; bottom: 1rem; right: 1rem; }
+        }
+        @media print {
+            .season-btn, #fxCanvas { display: none !important; }
+        }
+        
+        /* ===== END RAIN MODE CANVAS ===== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 249, 250, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover { color: var(--color-accent); }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            line-height: 1.8;
+        }
+
+        .header {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 260px;
+            min-width: 200px;
+            border-radius: 8px;
+            background-color: #e2e8f0;
+            border: 2px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .profile-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .header-content { flex: 1; position: relative; z-index: 2; }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--color-primary); }
+        .subtitle { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2rem; }
+
+        section { margin-bottom: 3rem; }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h3 { font-size: 1.1rem; color: var(--color-text); margin: 1.5rem 0 0.5rem 0; font-weight: 600; }
+        p { margin-bottom: 1rem; color: var(--color-text); }
+        strong { color: var(--color-primary); font-weight: 600; }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .highlight { background-color: #fef3c7; padding: 0.1rem 0.3rem; border-radius: 3px; }
+
+        .news-item {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-left: 3px solid var(--color-accent);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .news-item strong:first-child { display: inline; margin-right: 1rem; color: var(--color-accent); }
+
+        .award {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #f59e0b;
+            transition: background-color 0.3s ease;
+        }
+
+        footer {
+            background-color: rgba(237, 242, 247, 0.9);
+            padding: 2rem;
+            text-align: center;
+            color: var(--color-text-light);
+            margin-top: 4rem;
+            border-top: 1px solid var(--color-border);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        footer p { margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; justify-content: flex-start; }
+
+            .summer-btn { top: auto; bottom: 1rem; right: 1rem; }
+            .rain-btn { top: auto; bottom: 1rem; right: 1rem; }
+            .dark-mode-btn { right: 1rem; }
+
+            .header { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2rem; }
+            main { padding: 7rem 1rem 4rem; }
+        }
+
+        @media print {
+            nav, .summer-btn, .rain-btn, .dark-mode-btn, #rainCanvas { display: none; }
+            main { padding: 2rem; margin-top: 0; }
+        }
