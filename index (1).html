@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Srinivasa Kartik Nemani",
+  "url": "https://kartiknemani.github.io",
+  "jobTitle": "PostDoctoral Research Fellow",
+  "description": "Kartik Nemani is a mechanical engineer and a materials research scientist working on nanomaterials and ceramics for high temperature applications",
+  "sameAs": [
+    "https://www.linkedin.com/in/Kartik-Nemani",
+    "https://scholar.google.com/citations?user=vclv4OUAAAAJ&hl=en&oi=ao",
+    "https://github.com/kartiknemani",
+     "https://wikidata.org/wiki/Q141374617"
+  ]
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivasa Kartik Nemani - Academic Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+</head>
+<body>
+
+    <!-- DISABLED - WINTER BUTTON (re-enable next winter) -->
+    <!-- DISABLED - SPRING BLOSSOM BUTTON (spring has ended) -->
+
+    <!-- DARK MODE TOGGLE - half sun / half moon icon -->
+    <button id="darkModeBtn" class="dark-mode-btn" onclick="toggleDarkMode()" title="Toggle light / dark mode">
+        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left half: Sun -->
+            <path d="M 11 1 A 10 10 0 0 0 11 21 Z" fill="#fef3c7"/>
+            <!-- Right half: Moon -->
+            <path d="M 11 1 A 10 10 0 0 1 11 21 Z" fill="#1e293b"/>
+            <!-- Circle border -->
+            <circle cx="11" cy="11" r="10" fill="none" stroke="#94a3b8" stroke-width="1"/>
+            <!-- Divider line -->
+            <line x1="11" y1="1" x2="11" y2="21" stroke="#94a3b8" stroke-width="0.6"/>
+            <!-- Sun core -->
+            <circle cx="7.5" cy="11" r="2.5" fill="#f59e0b"/>
+            <!-- Sun rays -->
+            <line x1="7.5" y1="3.5" x2="7.5" y2="5.5"   stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2.5" y1="6.5" x2="4"   y2="7.8"   stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="1.5" y1="11"  x2="3.5" y2="11"    stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2.5" y1="15.5" x2="4"  y2="14.2"  stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="7.5" y1="18.5" x2="7.5" y2="16.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Moon crescent -->
+            <circle cx="14.5" cy="11" r="3.5" fill="#e2e8f0"/>
+            <circle cx="15.8" cy="9.5" r="3"  fill="#1e293b"/>
+            <!-- Stars -->
+            <circle cx="18"   cy="6.5" r="0.7" fill="#93c5fd"/>
+            <circle cx="19.5" cy="13"  r="0.5" fill="#93c5fd"/>
+        </svg>
+    </button>
+
+       <!-- ========================================================= -->
+    <!-- UNIFIED SEASONAL ACTION BUTTON (Ordered: Spring/Summer/Fall/Winter/Rain) -->
+    <!-- Currently Active: FALL LEAVES -->
+    <!-- ========================================================= -->
+    <button id="seasonToggleBtn" class="season-btn fall-theme" onclick="toggleActiveSeason()">
+        <span>🍁</span> Fall Foliage
+    </button>
+
+    <!-- Fullscreen canvas used by active seasonal animations -->
+    <canvas id="fxCanvas"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a "="KARTIK NEMANI- C.V..pdf" target="_blank">CV</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="media.html" target="_blank">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="header" id="about">
+            <div class="profile-image">
+                <img src="Self-casual.png" alt="Profile Picture">
+            </div>
+            <div class="header-content">
+                <h1>Srinivasa Kartik Nemani</h1>
+                <p class="subtitle">Post-Doctoral Fellow, University of Alabama at Birmingham</p>
+                <br>
+                <p>
+                    I am a <strong style="color: var(--color-accent);">Fellow</strong> in the <strong>Department of Mechanical and Materials Engineering</strong> at 
+                    <strong>The University of Alabama at Birmingham</strong>.
+                </p>
+                <p>
+                    I completed my Ph.D. at Purdue University, advised by 
+                    <a href="https://www.babakanasori.com" target="_blank">Dr. Babak Anasori</a>.
+                </p>
+                <p>
+                    Earlier, I earned my Masters in mechanical engineering from the University of Toledo advised by 
+                    <a href="https://www.utoledo.edu/engineering/mechanical-industrial-manufacturing-engineering/people/sojoudi.html" target="_blank">Dr. Hossein Sojoudi</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <br>
+            <p>
+                I am broadly interested in <strong>Materials for Extremes</strong>, <strong>Layered Ceramics and 2D materials</strong> and <strong>Polymer Derived Ceramics</strong>, their applications to <strong>Nuclear, Aerospace</strong>, &amp; <strong>Energy</strong>.
+            </p>
+            <p>
+               My long-term research goal is to integrate atomistic design of layered ceramic materials with polymer‑derived precursors to create next‑generation structural systems, enabled by state‑of‑the‑art manufacturing approaches.
+            </p>
+            <h3>Current Research Thrusts</h3>
+            <ul>
+                <li><strong>Functionally Graded Materials:</strong> Developing compositionally and microstructurally graded ceramic architectures that enable tailored thermal, mechanical, and oxidation‑resistant responses for extreme‑environment applications, with emphasis on integrating high‑entropy phases and engineered interfaces.</li>
+                <li><strong>Materials for Nuclear Extremes:</strong> Designing and evaluating radiation‑tolerant ceramics and ceramic‑matrix composites through controlled defect engineering, high‑temperature stability studies, and microstructure‑by‑design frameworks to support next‑generation fission and fusion systems.</li>
+                <li><strong>2D layered Ceramics and Polymer Derived Hard Materials:</strong> Advancing synthesis and integration of MXenes, layered carbides, and high‑entropy 2D systems into polymer‑derived ceramic platforms to create ultrahigh‑temperature, oxidation‑resistant, and mechanically robust hybrid materials with tunable interfacial chemistry.</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <br>
+            <p>
+                For a complete list, please see 
+                <a href="https://scholar.google.com/citations?user=vclv4OUAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.
+            </p>
+            <h3>Recent Papers</h3>
+            <ul>
+                <li>
+                    <strong>Understanding phase and microstructure evolution of Ti₃C₂Tₓ MXene-polymer derived silicon carbide</strong>.
+                    <br> S.K.Nemani, K.Bawane et al. <em>Adv. Composites &amp; Hybrid Mater, 2026</em>. 
+                    [<a href="Understanding phase and microstructure.pdf" target="_blank">PDF</a>]
+                </li>
+                <li>
+                    <strong>Order‑to‑disorder transition due to entropy in layered and 2D carbides</strong>
+                    <br>BC Wyatt,...S.K.Nemani, et al. <em>Science, 2025</em>. 
+                    [<a href="2025-order-to-disorder-transition-due-to-entropy-in-layered-and-2d-carbides.pdf" target="_blank">PDF</a>]
+                </li>
+                <li>
+                    <strong>MXene‑derived TiB₂ formation in B₄C at high temperatures</strong>
+                    <br>N Chandran BS, A Thakur, SK Nemani, N Moharana, CPH Scott, et al. <em>Advanced Composites and Hybrid Materials, 2025</em>. 
+                    [<a href="https://link.springer.com/content/pdf/10.1007/s42114-025-01387-x.pdf" target="_blank">PDF</a>]
+                </li>
+                <li>
+                    <strong>Ti₃C₂Tₓ MXene–Zirconium Diboride Based Ultra‑High Temperature Ceramics</strong>
+                    <br>SK Nemani, N Gilli, S Goldy, A Kumar, Y Im, AJ Vorhees, BC Wyatt, et al. <em>Advanced Science, 2025</em>. 
+                    [<a href="https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/advs.202500487" target="_blank">PDF</a>]
+                </li>
+                 <li>
+                    <strong>High-Entropy 2D Carbide MXenes: TiVNbMoC₃ and TiVCrMoC₃</strong>
+                    <br>SK Nemani, B Zhang, BC Wyatt et al. <em>ACS Nano, 2021</em>. 
+                    [<a href="https://pubs.acs.org/ancac3/article/15/8/12815/1551998/High-Entropy-2D-Carbide-MXenes-TiVNbMoC3-and">PDF</a>]
+                </li>
+            </ul>
+        </section>
+
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <h3>Courses</h3>
+            <ul>
+                <li><strong>MIME 3440 Heat Transfer</strong> (Fall 2017, Summer 2018)</li>
+                <li><strong>MIME 341 Thermodynamics II</strong> (Spring 2018)</li>
+                <li><strong>ME 482 Introduction to Nanotechnology</strong> (Fall 2023)</li>
+            </ul>
+            <h3>Tutorials &amp; Workshops</h3>
+            <ul>
+                <li><strong>ME 523 Nanosystems Principles-Scanning Electron Microscopy</strong> - Indianapolis, Spring 2024</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Selected Awards and Honors</h2>
+            <div class="award">
+                <strong>Silver Award</strong>
+                <br>Web of Talents, 2025. 
+                <a href="https://www.linkedin.com/posts/mariolan_ieee-iedm-stem-activity-7303170807201943552-Jp88/?rcm=ACoAAAn8ZpIBTMO7ODh23iT2jwqDo_6-azVNZFM" target="_blank" rel="noopener noreferrer">Read more</a>
+            </div>
+            <div class="award">
+                <strong>Elite 50 Award</strong>
+                <br>Purdue University, 2024. 
+                *<a href="#" target="_blank">Read more</a>
+            </div>
+            <div class="award">
+                <strong>Basic Sciences Division GEMS-Diamond Award</strong>
+                <br>American Ceramic Society (ACerS), 2024.
+            </div>
+            <div class="award">
+                <strong>Outstanding Masters Thesis</strong>
+                <br>University of Toledo, 2018.
+            </div>
+        </section>
+
+        <section>
+            <h2>Recent and Upcoming Talks</h2>
+            <p> 
+                <strong>AFOSR-MURI</strong> Annual Review Meeting, Washington D.C., April 2026.<br>
+                <strong>Invited Speaker and presentation</strong> The American Ceramic Society (ACerS) Spring Meeting Bellevue, Washington, April 2026.<br>
+                <strong>Invited Speaker</strong> Young Investigator Forum, ICACC (International Conference on Advanced Ceramics and Composites), January 2025.<br>
+                <strong>Invited Speaker</strong> National Science Day Gayatri Vidya Parishad College of Engineering Visakhapatnam, India, February 2024.<br>
+                <strong>Invited Speaker</strong> Andhra University, College of Mechanical Engineering, February 2024.<br>
+            </p>
+        </section>
+
+        <section id="news">
+            <h2>News &amp; Updates</h2>
+           <div class="news-item">
+    <strong>2026</strong>
+    <ol>
+        <li>Exciting news! Our NSUF-SUPER RTE proposal on "Mechanical properties of in situ irradiated layered compositionally complex transition metal carbides (MAX phases)" has been selected for a Department of Energy award. This project grants us direct access to world class, nuclear science infrastructure at Idaho and Argonne national laboratories to investigate the performance of these advanced materials for next-generation nuclear reactors. <a href="https://nsuf.inl.gov/Home/Article/139?Keyword=&Archive=False">Read more</a></li>
+        <li>I will be presenting at the NSF-Ceramics Professional Development Workshop for emerging leaders from October 02-04 at Pittsburgh.</li>
+        <li>Excited to be a part of the 2026 cohort of the Postdoctoral Grant Writing Workshop at UAB!</li>
+    </ol>
+</div>
+
+            <div class="news-item">
+                <strong>2025</strong>
+                <ol>
+                    <li>The first report on MXene-Zirconium-Diboride based UHTCs is published now in <strong>Advanced Science.</strong></li>
+                    <li>Our Extensive Study on High Entropy MXenes is published now in <strong>Science.</strong></li>
+                    <li>Received the <strong>Global Web of Talents Silver</strong> award! Humbled!</li>
+                </ol>
+            </div>
+            <div class="news-item">
+                <strong>2024</strong>
+                <ol>
+                    <li>Our study on ZrB2-MXene UHTCs received the <strong>GEMS (Graduate Excellence in Materials Science) Diamond Award</strong> at MS&amp;T 2024!</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="service">
+            <h2>Service</h2>
+            <h3>Professional Service</h3>
+            <ul>
+                <li><strong>Guest Editor:</strong> Ceramics</li>
+                <li><strong>Reviewer:</strong> Nature, ACerS, ECerS, Elsevier, ACS (Please see <strong>CV</strong> for complete list)</li>
+                <li><strong>Committee Member:</strong> Education and Professional Development Committee (ACerS) 2022-Present</li>
+                <li><strong>Session Chair:</strong> ICACC 2025, Young Investigator Forum<br><br>MXenes Symposium MRS Spring 2022, Fall 2022<br><br>Advanced Materials for harsh environments MS&amp;T Fall 2021</li>
+                <li><strong>Organiser:</strong> IGNITE MSE 2023, 2024</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Software</h2>
+            <p>
+                <a href="https://purdue0-my.sharepoint.com/my?id=%2Fpersonal%2Fsnemani%5Fpurdue%5Fedu%2FDocuments%2FMAX%20calculator%20software&FolderCTID=0x012000902103DC1114834D95EC404EBF6D2CDC" target="_blank">MAX Calculator (Password: MAX)</a>
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> <a href="mailto:nemanis@uab.edu">nemanis@uab.edu</a></p>
+            <p><strong>Office:</strong> Gorrie hall GH5201, University of Alabama at Birmingham</p>
+            <p><strong>Address:</strong><br>Mechanical and Materials Engineering<br>University of Alabama<br>Birmingham, AL, 35210</p>
+            <p>
+                <strong>Links:</strong><br>
+                <a href="https://scholar.google.com/citations?user=vclv4OUAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a> | 
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57201860816" target="_blank">Scopus</a> | 
+                <a href="https://www.linkedin.com/in/kartik-nemani/" target="_blank">LinkedIn</a> |
+                <a href="https://www.webofscience.com/wos/author/record/GRR-3218-2022" target="_blank">Clarivate WOS</a>
+            </p>
+        </section>
+    </main>
+
+        <footer>
+        <p>&copy; <span id="current-year">2026</span> Kartik Nemani. All rights reserved.</p>
+        <p>Last updated: <span id="last-updated">August 2026</span></p>
+        <p>
+            Number of Visitors<br> 
+            <a href='https://www.free-counters.org/'>
+                <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=df3f895d9eb8048283b38cd88c7be80eaf97916d'></script>
+                <script type="text/javascript" src="https://freevisitorcounters.com/en/home/counter/1476551/t/13"></script>
+            </a>
+        </p>
+    </footer>
+
+    <!-- Modular Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/seasonal.js"></script>
+</body>
+</html>
